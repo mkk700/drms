@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dreamtitle:</b>
+  <%= @dream.dreamtitle %>
+</p>
+
+<p>
+  <b>Dreamtype:</b>
+  <%= Dreamtype.find_by_id(@dream.dreamtype.to_i).dreamtype %>
+</p>
+
+<p>
+  <b>Dreamtext:</b>
+  <%= @dream.dreamtext %>
+</p>
+
+<p>
+  <b>Ispublic:</b>
+  <%= @dream.ispublic %>
+</p>
+
+<p>
+  <b>Allowcomments:</b>
+  <%= @dream.allowcomments %>
+</p>
+
+
+<%= link_to 'Edit', edit_dream_path(@dream) %> |
+<%= link_to 'Back', dreams_path %>

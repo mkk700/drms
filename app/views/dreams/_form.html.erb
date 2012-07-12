@@ -1,0 +1,44 @@
+<%= form_for(@dream) do |f| %>
+  <% if @dream.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dream.errors.count, "error") %> prohibited this dream from being saved:</h2>
+
+      <ul>
+      <% @dream.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :dreamtitle %><br />
+    <%= f.text_field :dreamtitle %>
+  </div>
+    
+  <div class="field">
+    <%= f.label :dreamtype %><br />
+    <%= f.select :dreamtype, Dreamtype.all.collect {|x| [x.dreamtype, x.id]}, {} %> <!-- , :multiple => true --> 
+  </div>
+  
+  <div class="field">
+    <%= f.label :dreamtext %><br />
+    <%= f.text_area :dreamtext %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :ispublic %><br />
+    <%= f.check_box :ispublic %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :allowcomments %><br />
+    <%= f.check_box :allowcomments %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

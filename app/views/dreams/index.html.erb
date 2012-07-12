@@ -1,0 +1,31 @@
+<h1>Listing dreams</h1>
+
+<table>
+  <tr>
+    <th>Dreamtitle</th>
+    <th>Dreamtext</th>
+    <th>Dreamtype</th>
+    <th>Ispublic</th>
+    <th>Allowcomments</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dreams.each do |dream| %>
+  <tr>
+    <td><%= dream.dreamtitle %></td>
+    <td><%= dream.dreamtext %></td>
+    <td><%= Dreamtype.find_by_id(dream.dreamtype.to_i).dreamtype %></td>
+    <td><%= dream.ispublic %></td>
+    <td><%= dream.allowcomments %></td>
+    <td><%= link_to 'Show', dream %></td>
+    <td><%= link_to 'Edit', edit_dream_path(dream) %></td>
+    <td><%= link_to 'Destroy', dream, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dream', new_dream_path %>

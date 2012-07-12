@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dreamtitle: MyString
+  dreamtext: MyText
+  dream: 
+  ispublic: false
+  allowcomments: false
+
+two:
+  dreamtitle: MyString
+  dreamtext: MyText
+  dream: 
+  ispublic: false
+  allowcomments: false
